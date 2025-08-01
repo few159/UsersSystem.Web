@@ -1,34 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projeto Frontend Next.js – CRUD de Usuários
 
-## Getting Started
+## Introdução ao Projeto
 
-First, run the development server:
+Este projeto é a interface frontend de um sistema de gerenciamento de usuários (CRUD de Usuários), desenvolvido com Next.js, React, TypeScript e React Query. Ele se comunica com uma API NestJS via HTTP e utiliza Docker para facilitar o ambiente de execução.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+---
+
+## Tecnologias Utilizadas
+
+- **Next.js** – Framework React para SSR e SPA.
+- **React Query** – Gerenciamento de cache e estado remoto.
+- **Axios** – Requisições HTTP.
+- **SCSS Modules** – Estilização escopada por componente.
+- **Jest + Testing Library** – Testes unitários e de integração.
+- **Docker** – Ambiente isolado de desenvolvimento e execução.
+
+---
+
+## Estrutura de Pastas
+
+```
+📁 src
+├── components         # Componentes reutilizáveis como tabela e paginação
+├── hooks              # Hooks customizados com React Query
+├── pages              # Estrutura de rotas do Next.js
+├── providers          # Configuração do axios e auth
+├── styles             # Estilos globais e variáveis
+├── tests              # Testes unitários e integração
+└── utils              # Funções auxiliares (ex: serialização de query)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Como Rodar o Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Pré-requisitos
 
-## Learn More
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- Backend NestJS (ver documentação do backend para instruções)
 
-To learn more about Next.js, take a look at the following resources:
+### Passos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone o projeto:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+cd nome-do-repositorio
+```
 
-## Deploy on Vercel
+2. **Configure as variáveis de ambiente:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Crie um arquivo `.env.local` com a URL da API:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3000
+```
+
+3. **Suba os containers com Docker Compose:**
+
+```bash
+docker-compose up --build
+```
+
+4. **Acesse o frontend:**
+
+Abra seu navegador e vá até:
+
+```
+http://localhost:3001
+```
+
+---
+
+## Decisões Técnicas
+
+### React Query
+
+Optamos por React Query por sua robustez no controle de cache, revalidação e sincronização com o servidor.
+
+### SCSS Modules
+
+O uso de módulos SCSS garante encapsulamento de estilos e manutenção simplificada por componente.
+
+## Testes
+
+Para rodar os testes:
+
+```bash
+pnpm install
+pnpm run test
+```
+
+### Estrutura baseada em domínio
+
+A separação entre `hooks`, `components`, `providers` e `utils` visa facilitar a escalabilidade e leitura do projeto.
+
+### Docker
+
+Todo o ambiente roda isolado via Docker. Isso elimina variações entre sistemas operacionais e garante que todos desenvolvedores e CI/CD tenham o mesmo ambiente.
