@@ -66,6 +66,7 @@ docker-compose up --build
 4. **Acesse o frontend:**
 
 Abra seu navegador e vá até:
+Faça login com as credenciais de admin (user:admin / password:adm1234)
 
 ```
 http://localhost:3001
