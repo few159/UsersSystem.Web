@@ -1,0 +1,57 @@
+.form {
+  padding: 2rem;
+  border-radius: 8px;
+  margin: auto;
+  color: var(--text-color);
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.userRow {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  input {
+    flex: 1;
+    padding: 0.5rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 6px;
+  }
+
+  button {
+    background: #bb2525;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+      background: #ff4f4f;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+
+  button {
+    background: var(--button-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--button-hover);
+    }
+  }
+}

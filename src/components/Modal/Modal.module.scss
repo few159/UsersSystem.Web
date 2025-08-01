@@ -1,0 +1,54 @@
+.modalJail {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        z-index: 99999;
+
+        height: 100vh;
+        width: 100vw;
+
+        background-color: rgb(0 0 0 / 50%);
+        ;
+    }
+
+    .modal {
+        position: relative;
+        z-index: 100000;
+
+        max-height: 90%;
+        max-width: 95%;
+
+        background-color: #1d1d1d;
+
+        padding: 1rem;
+
+        border-radius: 6px;
+
+        color: white;
+        min-width: 60%;
+        min-height: 15%;
+
+        .closeBtn {
+            position: absolute;
+            width: 1.5rem;
+            right: 2%;
+            display: flex;
+            justify-content: center;
+
+            &:hover>svg {
+                transition: 150ms;
+            }
+        }
+
+        .content {}
+    }
+}

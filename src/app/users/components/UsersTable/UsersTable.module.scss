@@ -1,0 +1,60 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+
+    th,
+    td {
+        border: 1px solid var(--border-color);
+        padding: 0.75rem;
+        text-align: left;
+        color: var(--text-color);
+    }
+
+    th {
+        background-color: var(--accent-color);
+        font-weight: bold;
+    }
+
+    tr:hover {
+        background-color: var(--hover-color);
+    }
+}
+
+.iconCol {
+    width: 40px;
+    text-align: center;
+}
+
+.iconCell {
+    text-align: center !important;
+    vertical-align: middle;
+}
+
+.iconButton {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:hover {
+        color: #aaa;
+    }
+}
+
+.deleteButton {
+    composes: iconButton;
+    color: var(--danger-color);
+
+    &:hover {
+        color: #ff4f4f;
+    }
+}
+
+.empty {
+    text-align: center;
+    padding: 1rem;
+    color: #888;
+}
